@@ -62,7 +62,7 @@
 
             <p>
                 Cheese is the greatest thing we have created. God bless out taste buds.God bless cheese.
-                As such we shall praise it.
+                As such we shall praise it. Figs are great to.
                 <a href="https://en.wikipedia.org/wiki/Cheese" target="_blank">Our source page</a>
             </p>
 
