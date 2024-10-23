@@ -46,7 +46,7 @@ Hello,
 Have you prayed today: <?= htmlspecialchars($_POST['Prayers']) ?></p>
 
 <p> Have you sinned today: <?= htmlspecialchars($_POST['sins'])?></p>
-<p> Have you always left room for CHEESE in bed and or in other scenarios/places: <?= ($_POST['feta'])?> </p>
+<p> Have you always left room for CHEESE in bed and or in other scenarios/places: <?= ($_POST['feta'])?> Good day to all. </p>
 </body>
 </html>
 
