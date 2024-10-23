@@ -10,8 +10,9 @@
         <title>Wazoo party time</title>
 
     </head>
-	<script>
 
+	<script>
+/*
 		function my_event(){
 			document.getElementById("message").innerHTML = "CHEESE CHEESE CHEESE !!!";
 				}
@@ -48,7 +49,7 @@
 			let x = await fetch(file);
 			let y = await x.text();
 			document.getElementById("summoningwizard").innerHTML =y;
-		}
+		}*/
 	</script>
 
 
@@ -85,11 +86,11 @@
                     <label for="Credit card">Credit card:</label><br>
                     <input type="text" id="credit card" name="fname" required><br>
                     <label for="Security code">Security code:</label><br>
-                    <input type="text" id="lname" name="lname" required><br>
+                    <input type="text" id="code" name="code" required><br>
                     <label for="Expiration date">Expiration date:</label><br>
-                    <input type="text" id="lname" name="lname"required><br>
+                    <input type="text" id="exp" name="exp"required><br>
                     <label for="Social insurance number">Social insurance number:</label><br>
-                    <input type="text" id="lname" name="lname" onblur="mandatoryfx()" required> <br>
+                    <input type="text" id="SIN" name="SIN" onblur="mandatoryfx()" required> <br>
 		   
                     <p></p>
                     <input type="datetime-local" id="birthdaytime" name="birthdaytime">
@@ -115,47 +116,50 @@
 		</p>
 
 		<?php
+			//$id = htmlspecialchars($_GET["id"]);
 			$server = "localhost";
 		     	$username = "php";
 		     	$password = "hellonearth";
 		     	$database = "for_site";
-		     	$conn = mysqli_connect ($server,$username,$password,$database);
+		     	$conn = mysqli_connect($server,$username,$password,$database);
 
 		     if (!$conn) {
 		     die("Connection failed: {mysqli_connect_error()}");
 		     }
-		     $sql = "select * from info;";
+		     $sql = "select * from info";
 		     $result = mysqli_query($conn,$sql);
-		?>
+
+		 ?>
+
+			<form action="/hellowold/badoom.php" method ="get">
+				<label for "id"> Select and ID:</label><br/>
+				<select id="id" name="id">
+				<?php
+					foreach($result as $row)
+					{
+						echo "<option value ='{$row['id']}'> {$row['id']}</option>\n";
+					}
+
+					mysqli_close($conn);
+
+				?>
+				</select>
+				<br/>
+				<input type="submit" value= "submit"/>
+				</form>
+
+<p> Yet another form </p>
+		
+		<form action="/hellowold/badoom.php" method ="get">
+		<label for "SIN"> ADD a SIN: </label><br/>
+		<select id ="SIN" name="SIN">
+		<input type "text" value="submit"?>
+		</form>
+		
 
 		
 
-		<form action="/hellowold/badoom.php" method="get">
-			<label for "retreiving"> What is needed:</label><br/>
-			<select id="inpt" name="inpt">
-			<?php
-					  foreach($result as $row)
-					  {
-					  echo "<option value='{$row['credit_card']}'> {$row['ehtnicity']} {$row['SIN']} </option> \n";
-							mysqli_close($conn);
-						}
-
-			?>
-
-			</select>
-			<br/>
-			<input type "submit" value = "submit" />
-
-
-
-
-						
-
-				
-
-			
-		</form>
-
+	
                 <a href="index.html">Other page</a>
         </body>
 
